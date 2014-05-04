@@ -16,4 +16,4 @@ Libs:
 
 - `LinkedList <https://github.com/ivanseidel/LinkedList>`_ with few fixes
 - `Remote RTTTL <https://github.com/technobly/Remote-RTTTL>`_ with few changes
-- `Adafruit-PCD8544-Nokia-5110-LCD-library-for-Spark <https://github.com/pkourany/Adafruit-PCD8544-Nokia-5110-LCD-library-for-Spark`_
+- `Adafruit-PCD8544-Nokia-5110-LCD-library-for-Spark <https://github.com/pkourany/Adafruit-PCD8544-Nokia-5110-LCD-library-for-Spark>`_
