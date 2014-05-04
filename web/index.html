@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Snake</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Lato:900" rel='stylesheet' type='text/css'>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    $(document).ready(function () {
+        $('.alert').hide();
+        var socket = new WebSocket('ws://localhost:9000');
+        socket.onmessage = function (data) {
+            if (data.data == 'game_start') {
+                $('.score').html(0);
+                $('.game-start').effect('fade', 2000).effect('fade')
+            } else if (data.data == 'game_over') {
+                $('.game-over').effect('fade', 2000).effect('fade')
+            }
+            else {
+                $('.score').html(data.data).effect('shake', 50);
+            }
+        };
+    });
+    </script>
+    <style>
+        body {background-color: #ecf0f1; font-family: 'Lato', sans-serif;}
+        .container {width: 800px;}
+        .inside {background-color: #e67e22; margin-top: 40px; padding: 40px; text-align: center;}
+        .score-container {height: 270px;}
+        .alert-container {height: 2px;}
+        .alert {margin-bottom: 0}
+        h1 {font-size: 200px;}
+        h2 {font-size: 60px;} 
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inside">
+        <h2>Score</h2>
+        <div class="alert-container">
+            <div class="game-start alert alert-success">Game start!</div>
+            <div class="game-over alert alert-danger">Game over!</div>
+        </div>
+        <div class="score-container">
+            <h1 class="score">0</h1>
+        </div>
+        <small>created by @konradhalas</small>
+      </div>
+    </div>
+  </body>
+</html>
