@@ -2,7 +2,7 @@
 Snake Game on Spark Core
 ========================
 
-This is simple snake game implementation on Spark Core device with additional features (web dashboard, music).
+This is simple snake game implementation on Spark Core device with additional features (web dashboard, music). `VIDEO <https://www.youtube.com/watch?v=7EJ-d9rizAE>`_.
 
 Hardware:
 
